@@ -1,0 +1,51 @@
+@import './base.css';
+
+/* Make the overall page background a bit lighter for a brighter look */
+body {
+  background-color: #fbfbfb;
+  padding: 0; /* removed body padding */
+}
+
+/* Section titles (h2) use the brand green for consistency */
+section h2 {
+  color: #065f46;
+  font-weight: 700; /* ensure all section titles are bold and consistent */
+}
+
+/* Add extra spacing between sections for clearer separation */
+section {
+  margin: 2.5rem 0; /* increase vertical spacing between sections */
+}
+
+#app {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0; /* set app padding to 0 as requested */
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+
+  #app {
+    display: grid;
+    padding: 0 2rem;
+  }
+}
