@@ -2,12 +2,17 @@
   <div class="resort-header-wrap">
     <div class="header-banner">
       <img src="../assets/header.jpg" alt="Bale Concordia Resort" />
+      <div class="image-overlay"></div>
 
       <div class="banner-content">
         <div class="title-band">
           <div class="text">
+            <div class="brand-mark">
+              <span class="material-icons">nature</span>
+            </div>
             <h1>Bale Concordia</h1>
             <p class="tag">Cabins & Resort</p>
+            <div class="accent-line"></div>
           </div>
         </div>
       </div>
@@ -16,7 +21,6 @@
 </template>
 
 <script setup>
-// Animations removed — keep script empty
 </script>
 
 <style scoped>
@@ -24,24 +28,25 @@
   position: relative;
   overflow: hidden;
 }
+
 .header-banner img {
   width: 100%;
-  height: 320px;
+  height: 420px;
   object-fit: cover;
-  border-radius: 0;
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
-/* subtle dark gradient for better contrast */
-.header-banner::after {
-  content: '';
+/* Modern gradient overlay for better text contrast */
+.image-overlay {
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: linear-gradient(180deg, rgba(6,20,12,0.10) 0%, rgba(6,20,12,0.45) 100%);
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6,20,12,0.15) 0%,
+    rgba(6,20,12,0.35) 50%,
+    rgba(6,20,12,0.55) 100%
+  );
   pointer-events: none;
 }
 
@@ -56,64 +61,108 @@
   padding: 0;
 }
 
-/* horizontal band behind the title spanning across the header */
+/* Modern glass-morphism title band */
 .title-band {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 28px;
-  height: 84px;
-  background: rgba(255,255,255,0.6);
-  border-radius: 0;
-  display: flex;
-  align-items: center;
-  padding: 12px 32px;
-  box-shadow: 0 10px 30px rgba(18, 23, 28, 0.08);
+  bottom: 0;
+  padding: 2.5rem 1rem 2.5rem 1rem; /* adjusted horizontal padding */
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0.92) 0%,
+    rgba(255,255,255,0.85) 100%
+  );
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
   pointer-events: auto;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.08);
 }
 
-.title-band .text { display: flex; flex-direction: column; }
+.title-band .text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 1200px;
+  margin: 0; /* removed auto margin to align left */
+  padding-left: 1rem; /* add left padding to move text left */
+}
+
+/* Brand icon/mark */
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #065f46, #0a8a5e);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 4px 12px rgba(6,95,70,0.2);
+}
+
+.brand-mark .material-icons {
+  font-size: 28px;
+  color: #ffffff;
+}
 
 .header-banner h1 {
-  margin: 0 0 6px 0;
-  font-size: 1.9rem;
+  margin: 0;
+  font-size: 3rem;
   line-height: 1;
   font-weight: 700;
   color: #065f46;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 8px rgba(255,255,255,0.3);
 }
+
 .header-banner .tag {
   margin: 0;
-  font-size: 0.98rem;
-  color: rgba(0,0,0,0.75);
+  font-size: 1.1rem;
+  color: rgba(0,0,0,0.7);
   font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
 }
 
+/* Decorative accent line */
+.accent-line {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #065f46, rgba(6,95,70,0.2));
+  border-radius: 2px;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
 @media (min-width: 1100px) {
-  .header-banner img { height: 420px; }
-  .title-band { bottom: 36px; height: 104px; }
-  .header-banner h1 { font-size: 2.6rem; }
-  .header-banner .tag { font-size: 1.05rem; }
+  .header-banner img { height: 520px; }
+  .title-band { padding: 3rem 2rem; }
+  .title-band .text { padding-left: 2rem; } /* more left padding on desktop */
+  .header-banner h1 { font-size: 3.5rem; }
+  .header-banner .tag { font-size: 0.95rem; }
+  .brand-mark { width: 56px; height: 56px; }
+  .brand-mark .material-icons { font-size: 32px; }
 }
 
-.resort-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.6rem 0 1.2rem 0;
-  border-bottom: 1px solid var(--color-border);
+@media (max-width: 900px) {
+  .header-banner img { height: 360px; }
+  .title-band { padding: 2rem 1rem; }
+  .title-band .text { padding-left: 0.75rem; }
+  .header-banner h1 { font-size: 2.2rem; }
+  .header-banner .tag { font-size: 0.8rem; }
+  .brand-mark { width: 40px; height: 40px; margin-bottom: 0.5rem; }
+  .brand-mark .material-icons { font-size: 24px; }
+  .accent-line { width: 60px; height: 3px; margin-top: 0.75rem; }
 }
-.left {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.logo {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(22, 28, 37, 0.08);
+
+@media (max-width: 600px) {
+  .header-banner img { height: 280px; }
+  .title-band { padding: 1.5rem 0.75rem; }
+  .title-band .text { padding-left: 0.5rem; }
+  .header-banner h1 { font-size: 1.8rem; }
+  .header-banner .tag { font-size: 0.75rem; }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="location-section">
+  <section id="location" class="location-section">
     <h2>Location</h2>
     <p class="lead">Find us on the map.</p>
 
@@ -18,7 +18,10 @@
 </script>
 
 <style scoped>
-.location-section { margin: 2rem 0; }
+.location-section { 
+  margin: 2rem 0;
+  scroll-margin-top: 2rem; /* offset for smooth scroll */
+}
 .location-section h2 { margin: 0 0 0.25rem 0; font-size: 1.4rem }
 .location-section .lead { margin: 0 0 1rem 0; color: rgba(0,0,0,0.65) }
 
