@@ -7,7 +7,7 @@
       <iframe
         title="Bale Concordia Location"
         loading="lazy"
-        src="https://www.google.com/maps?q=8J2H%2BHRX%2C+Concepcion%2C+Tarlac%2C+Philippines&z=17&output=embed"
+        src="https://www.google.com/maps?q=8J2H%2BHRX+Bale+Concordia%2C+Concepcion%2C+Tarlac%2C+Philippines&z=17&output=embed"
         allowfullscreen
       ></iframe>
     </div>

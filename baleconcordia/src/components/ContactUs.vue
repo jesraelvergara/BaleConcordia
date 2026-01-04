@@ -8,7 +8,7 @@
         <span class="material-icons">location_on</span>
         <div>
           <h3>Address</h3>
-          <p>San Francisco Concepcion, Tarlac</p>
+          <p>1072 Purok 3, San Francisco, Concepcion, Tarlac</p>
         </div>
       </div>
 
