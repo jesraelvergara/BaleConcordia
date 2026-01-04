@@ -3,7 +3,7 @@
     <div class="inner">
       <div class="brand">
         <strong>Bale Concordia</strong>
-        <span>Cabins & Mountain Resort</span>
+        <span>Cabins & Resort</span>
       </div>
 
       <div class="copyright">© {{ year }} Bale Concordia. All rights reserved.</div>
